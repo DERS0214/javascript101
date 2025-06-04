@@ -40,3 +40,13 @@ const frameworks = [
  *    para agregar una nueva fila con estos datos al cuerpo de la tabla HTML.
  */
 
+for (let line of frameworks) {
+  let [framework,date,users,percentage] = line.split("|")
+  var statistics = new Object;
+  statistics.frameworkName = framework.trim();
+  statistics.releaseDate = date.trim();
+  statistics.usersName = users.trim();
+  statistics.popularityPercentage = percentage.trim();
+  //ya se limpia en el metodo de addrows igualmente se lo hace a las variables
+  addRow(statistics, "data-frameworks")
+}
